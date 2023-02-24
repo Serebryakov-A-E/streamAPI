@@ -26,10 +26,10 @@ public class Main {
     }
 
     public void countEvenNumbers(List<Integer> list) {
-        List<Integer> even = list.stream()
+        System.out.println("\nСписок четных чисел: ");
+        System.out.println("\nКоличество четных чисел в списке = " + list.stream()
                 .filter(x -> x % 2 == 0)
-                .toList();
-        System.out.println("\nКоличество четных чисел в списке = " + even.size());
-        even.forEach(System.out::println);
+                .peek(x -> System.out.print(x + " "))
+                .count());
     }
 }
